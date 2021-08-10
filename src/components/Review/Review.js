@@ -4,17 +4,20 @@ import { getDatabaseCart, processOrder, removeFromDatabaseCart } from '../../uti
 import Cart from '../Cart/Cart';
 import ReviewItem from '../ReviewIten/ReviewItem';
 import happyImage from '../../images/giphy.gif';
+import { useHistory } from 'react-router';
 
 const Review = () => {
 
     const[cart,setCart]=useState([]);
     const [orderPlaced,setOrderPlace]=useState(false)
+    const history =useHistory()
 
 
-    const handlePlaceOrder=() =>{
-        setCart([]);
-        setOrderPlace(true);
-        processOrder();
+    const handleProceedCheckout=() =>{
+        history.push('/shipment')
+        // setCart([]);
+        // setOrderPlace(true);
+        // processOrder();
 
     }
 
@@ -49,7 +52,7 @@ const Review = () => {
             </div>
             <div className="cart-container">
                 <Cart cart={cart}></Cart>
-                <button onClick={handlePlaceOrder} className="main-button">Place Order</button>
+                <button onClick={handleProceedCheckout} className="main-button">Proceed Checkout</button>
             </div>
         </div>
     );

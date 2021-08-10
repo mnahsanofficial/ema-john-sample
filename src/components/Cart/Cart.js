@@ -19,7 +19,7 @@ const Cart = (props) => {
     else if(totalPrice>0){
         shipping=12.99;
     }
-    const tax=totalPrice/10;
+    const tax=(totalPrice/10);
 
     const formatNumber=num=>{
         const precision=num.toFixed(2);
